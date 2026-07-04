@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Likitha H L — Data Analyst &amp; Full Stack Developer</title>
+<meta name="description" content="Likitha H L — Aspiring Data Analyst &amp; Web Developer. MCA, Python, SQL, Power BI, Tableau, PHP, full-stack development. Mysuru, Karnataka.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0D12;
+    --surface:#12161F;
+    --surface-2:#181D28;
+    --line:#232938;
+    --text:#E9ECF3;
+    --muted:#8993A8;
+    --teal:#2FD9C4;
+    --violet:#B79CFF;
+    --amber:#F2B857;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{font-family:'Space Grotesk',sans-serif;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  a{color:inherit;text-decoration:none;}
+  ::selection{background:var(--teal);color:#04110F;}
+
+  .wrap{max-width:1120px;margin:0 auto;padding:0 32px;}
+  @media(max-width:640px){.wrap{padding:0 20px;}}
+
+  /* NAV */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(10,13,18,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0;}
+  .logo{font-family:'Space Grotesk';font-weight:700;font-size:1.1rem;letter-spacing:.5px;}
+  .logo span{color:var(--teal);}
+  .navlinks{display:flex;gap:28px;font-size:.88rem;color:var(--muted);}
+  .navlinks a:hover{color:var(--text);}
+  .status{display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--teal);font-family:'JetBrains Mono';}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 8px var(--teal);animation:pulse 2s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+  .navlinks{display:none;}
+  @media(min-width:820px){.navlinks{display:flex;}}
+
+  /* HERO */
+  .hero{padding:96px 0 64px;position:relative;}
+  .eyebrow{
+    font-family:'JetBrains Mono';font-size:.78rem;color:var(--violet);
+    display:flex;align-items:center;gap:10px;margin-bottom:22px;
+  }
+  .eyebrow::before{content:'';width:24px;height:1px;background:var(--violet);}
+  .hero h1{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:700;line-height:1.05;letter-spacing:-1px;margin-bottom:22px;}
+  .roles{display:inline-block;position:relative;height:1.1em;overflow:hidden;vertical-align:bottom;min-width:1px;}
+  .role-track{display:flex;flex-direction:column;animation:roll 6s infinite;}
+  .role-track span{height:1.28em;display:block;}
+  .role-track span:nth-child(1){color:var(--teal);}
+  .role-track span:nth-child(2){color:var(--violet);}
+  .role-track span:nth-child(3){color:var(--amber);}
+  @keyframes roll{
+    0%,28%{transform:translateY(0);}
+    33%,61%{transform:translateY(-1.28em);}
+    66%,94%{transform:translateY(-2.56em);}
+    100%{transform:translateY(0);}
+  }
+  .hero p.lede{color:var(--muted);font-size:1.08rem;max-width:600px;margin-bottom:34px;}
+  .hero p.lede b{color:var(--text);font-weight:600;}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:56px;}
+  .btn{
+    padding:13px 24px;border-radius:8px;font-size:.9rem;font-weight:600;
+    display:inline-flex;align-items:center;gap:8px;border:1px solid transparent;transition:.2s;
+  }
+  .btn-primary{background:var(--teal);color:#04110F;}
+  .btn-primary:hover{background:#4FE8D5;transform:translateY(-2px);}
+  .btn-outline{border-color:var(--line);color:var(--text);}
+  .btn-outline:hover{border-color:var(--violet);color:var(--violet);transform:translateY(-2px);}
+
+  .stat-strip{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+    gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;
+  }
+  .stat{background:var(--surface);padding:20px 18px;}
+  .stat .num{font-family:'Space Grotesk';font-size:1.6rem;font-weight:700;color:var(--teal);}
+  .stat .lab{font-size:.72rem;color:var(--muted);font-family:'JetBrains Mono';margin-top:4px;text-transform:uppercase;letter-spacing:.4px;}
+
+  /* SECTION HEADERS */
+  section{padding:88px 0;border-bottom:1px solid var(--line);}
+  .sec-head{margin-bottom:48px;}
+  .sec-eyebrow{font-family:'JetBrains Mono';font-size:.78rem;color:var(--teal);margin-bottom:10px;}
+  .sec-head h2{font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:700;}
+  .sec-head h2 em{font-style:normal;color:var(--violet);}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:56px;}
+  @media(max-width:800px){.about-grid{grid-template-columns:1fr;}}
+  .about-grid p{color:var(--muted);margin-bottom:16px;font-size:1.02rem;}
+  .about-grid p b{color:var(--text);}
+  .quote{
+    border-left:2px solid var(--teal);padding-left:18px;margin:26px 0;
+    font-family:'Space Grotesk';font-size:1.1rem;color:var(--text);
+  }
+  .info-cards{display:flex;flex-direction:column;gap:14px;}
+  .info-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:10px;
+    padding:16px 18px;display:flex;gap:14px;align-items:flex-start;
+  }
+  .info-card .ic{font-size:1.3rem;}
+  .info-card .it{font-size:.72rem;color:var(--muted);font-family:'JetBrains Mono';text-transform:uppercase;letter-spacing:.4px;}
+  .info-card .iv{font-weight:600;margin-top:2px;}
+  .info-card .is{font-size:.82rem;color:var(--muted);margin-top:2px;}
+
+  /* SKILLS */
+  .skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+  .skill-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px;}
+  .skill-card h3{font-size:.78rem;font-family:'JetBrains Mono';color:var(--violet);text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px;}
+  .chip-row{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{
+    background:var(--surface-2);border:1px solid var(--line);border-radius:6px;
+    padding:6px 12px;font-size:.82rem;color:var(--text);
+  }
+
+  /* PROJECTS */
+  .proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:24px;}
+  .proj-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;
+    padding:28px;display:flex;flex-direction:column;transition:.2s;
+  }
+  .proj-card:hover{border-color:var(--teal);transform:translateY(-4px);}
+  .proj-tag{font-family:'JetBrains Mono';font-size:.72rem;color:var(--amber);text-transform:uppercase;margin-bottom:12px;}
+  .proj-card h3{font-size:1.15rem;font-weight:700;margin-bottom:10px;}
+  .proj-card p{color:var(--muted);font-size:.92rem;margin-bottom:16px;flex-grow:1;}
+  .proj-stack{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;}
+  .proj-stack span{font-size:.72rem;font-family:'JetBrains Mono';background:var(--surface-2);border:1px solid var(--line);border-radius:5px;padding:4px 8px;color:var(--muted);}
+  .proj-link{font-size:.85rem;color:var(--teal);font-weight:600;display:inline-flex;align-items:center;gap:6px;}
+  .proj-link:hover{color:#4FE8D5;}
+
+  /* EDUCATION */
+  .timeline{position:relative;padding-left:28px;}
+  .timeline::before{content:'';position:absolute;left:6px;top:6px;bottom:6px;width:1px;background:var(--line);}
+  .t-item{position:relative;padding-bottom:38px;}
+  .t-item:last-child{padding-bottom:0;}
+  .t-item::before{
+    content:'';position:absolute;left:-28px;top:4px;width:13px;height:13px;
+    border-radius:50%;background:var(--bg);border:2px solid var(--teal);
+  }
+  .t-year{font-family:'JetBrains Mono';font-size:.76rem;color:var(--teal);margin-bottom:6px;}
+  .t-item h3{font-size:1.08rem;font-weight:700;margin-bottom:4px;}
+  .t-item p{color:var(--muted);font-size:.9rem;}
+  .t-item .score{color:var(--violet);font-weight:600;}
+
+  .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:40px;}
+  .cert-card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;}
+  .cert-card .ct{font-weight:600;font-size:.95rem;margin-bottom:4px;}
+  .cert-card .cs{font-size:.8rem;color:var(--muted);}
+
+  /* CONTACT */
+  .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+  @media(max-width:760px){.contact-wrap{grid-template-columns:1fr;}}
+  .contact-wrap h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:16px;}
+  .contact-wrap p{color:var(--muted);margin-bottom:28px;max-width:440px;}
+  .contact-links{display:flex;flex-direction:column;gap:12px;}
+  .clink{
+    display:flex;align-items:center;gap:14px;background:var(--surface);
+    border:1px solid var(--line);border-radius:10px;padding:16px 18px;transition:.2s;
+  }
+  .clink:hover{border-color:var(--teal);transform:translateX(4px);}
+  .clink .cl-i{font-size:1.2rem;}
+  .clink .cl-l{font-size:.72rem;color:var(--muted);font-family:'JetBrains Mono';text-transform:uppercase;}
+  .clink .cl-v{font-weight:600;}
+  .role-tags{display:flex;flex-wrap:wrap;gap:10px;}
+  .role-tag{
+    background:var(--surface-2);border:1px solid var(--line);border-radius:20px;
+    padding:9px 16px;font-size:.82rem;
+  }
+
+  footer{padding:32px 0;text-align:center;color:var(--muted);font-size:.82rem;font-family:'JetBrains Mono';}
+  footer span{color:var(--teal);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <div class="logo">Likitha<span> </span>H L</div>
+      <div class="navlinks">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="status"><span class="dot"></span>Open to work</div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero wrap" style="border-bottom:none;padding-top:64px;">
+  <div class="eyebrow">MCA STUDENT · MYSURU, KARNATAKA</div>
+  <h1>Likitha H L —<br>
+    <span class="roles"><span class="role-track">
+      <span>Data Analyst</span>
+      <span>Full Stack Developer</span>
+    </span></span>
+  </h1>
+  <p class="lede">I turn spreadsheets into <b>decisions</b> and ideas into <b>working web apps</b>. Hands-on with
+    Excel, SQL, Python, Power BI and Tableau on the data side — PHP, MySQL and JavaScript on the build side.
+    Currently finishing my <b>MCA</b> and looking for my first full-time role.</p>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="#projects">View My Work →</a>
+    <a class="btn btn-outline" href="mailto:llikitha702@gmail.com">✉ Get In Touch</a>
+    <a class="btn btn-outline" href="https://github.com/likitha8050" target="_blank">🐙 GitHub</a>
+  </div>
+  <div class="stat-strip">
+    <div class="stat"><div class="num">8.75</div><div class="lab">MCA CGPA</div></div>
+    <div class="stat"><div class="num">3</div><div class="lab">Full Projects Shipped</div></div>
+    <div class="stat"><div class="num">5+</div><div class="lab">Languages / Tools</div></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow">01 · ABOUT</div>
+      <h2>Who I <em>Am</em></h2>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p>I'm <b>Likitha H L</b>, a Master of Computer Applications student at <b>Maharaja Institute of Technology, Mysuru</b>, graduating in 2026 with an expected CGPA of <b>8.75</b>. I completed my BCA at JSS College of Arts, Commerce and Science with a CGPA of <b>8.87</b>.</p>
+        <div class="quote">"I like the two sides of this field — finding the story hidden in a dataset, and then building the product that puts it in front of people."</div>
+        <p>On the analytics side, I work with <b>Excel, SQL, Python, Power BI and Tableau</b> to build dashboards and reports. On the development side, I build <b>database-driven web applications</b> with PHP, MySQL, HTML, CSS and JavaScript — from admin panels to authentication systems.</p>
+        <p>I also completed a <b>3-month Artificial Intelligence Internship at SoftFlix, Mysuru (April–June 2026)</b>, where I gained hands-on experience in Python, Machine Learning, data analysis, and web application development.</p>
+      </div>
+      <div class="info-cards">
+        <div class="info-card"><div class="ic">🎓</div><div><div class="it">Currently</div><div class="iv">MCA · Maharaja Institute of Technology</div><div class="is">2024–2026 (Expected) · CGPA 8.75</div></div></div>
+        <div class="info-card"><div class="ic">📊</div><div><div class="it">Data Focus</div><div class="iv">SQL · Power BI · Tableau · Python</div><div class="is">Dashboards & reporting</div></div></div>
+        <div class="info-card"><div class="ic">💻</div><div><div class="it">Dev Focus</div><div class="iv">PHP · MySQL · JavaScript</div><div class="is">Full-stack web applications</div></div></div>
+        <div class="info-card"><div class="ic">📍</div><div><div class="it">Location</div><div class="iv">Mysuru, Karnataka</div><div class="is">Open to on-site · hybrid · remote</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow">02 · SKILLS</div>
+      <h2>Tech <em>Toolkit</em></h2>
+    </div>
+    <div class="skill-grid">
+      <div class="skill-card">
+        <h3>Programming Languages</h3>
+        <div class="chip-row">
+          <span class="chip">C</span><span class="chip">Python</span><span class="chip">PHP</span><span class="chip">SQL</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Data &amp; Analytics</h3>
+        <div class="chip-row">
+          <span class="chip">Excel</span><span class="chip">SQL</span><span class="chip">Power BI</span><span class="chip">Tableau</span><span class="chip">Python</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Web Technologies</h3>
+        <div class="chip-row">
+          <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">PHP</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Database</h3>
+        <div class="chip-row">
+          <span class="chip">MySQL</span><span class="chip">Database Design</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Tools &amp; IDEs</h3>
+        <div class="chip-row">
+          <span class="chip">VS Code</span><span class="chip">CodeBlocks</span><span class="chip">XAMPP</span><span class="chip">Jupyter Notebook</span><span class="chip">Google Colab</span><span class="chip">GitHub</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Core Concepts</h3>
+        <div class="chip-row">
+          <span class="chip">Database Design</span><span class="chip">Web App Development</span><span class="chip">System Authentication</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow">03 · PROJECTS</div>
+      <h2>What I've <em>Built</em></h2>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <div class="proj-tag">Security · Backend</div>
+        <h3>Centralized Automatic Certificate Fraud Detection System</h3>
+        <p>Java-based system that validates documents against a secure MySQL database to detect certificate fraud. Automated verification workflows improve the accuracy and security of certificate authentication, with a schema and backend logic designed to cross-check data and flag inconsistencies.</p>
+        <div class="proj-stack"><span>Java JDK</span><span>Node.js</span><span>MySQL</span><span>IntelliJ</span></div>
+        <a class="proj-link" href="https://github.com/likitha8050/Certificate-Fraud-Detection" target="_blank">🐙 View on GitHub →</a>
+      </div>
+      <div class="proj-card">
+        <div class="proj-tag">Full Stack · PHP</div>
+        <h3>Online Food Ordering System</h3>
+        <p>A web-based platform where users browse menus, add items to a cart, and place orders online. Includes an admin panel to manage menu items, track orders and update order status, with database-driven order processing throughout.</p>
+        <div class="proj-stack"><span>PHP</span><span>MySQL</span><span>XAMPP</span><span>VS Code</span></div>
+        <a class="proj-link" href="https://github.com/likitha8050" target="_blank">🐙 View on GitHub →</a>
+      </div>
+      <div class="proj-card">
+        <div class="proj-tag">Full Stack · PHP</div>
+        <h3>Library Management System</h3>
+        <p>A complete library system with separate Admin and User modules — login authentication, book search, issue/return functionality and category management, built on a responsive HTML/CSS/JS front end with a MySQL backend.</p>
+        <div class="proj-stack"><span>PHP</span><span>MySQL</span><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+        <a class="proj-link" href="https://github.com/likitha8050/Library-Management-System" target="_blank">🐙 View on GitHub →</a>
+      </div>
+    </div>
+  </div>
+</section><section id="experience">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow">04 · EXPERIENCE</div>
+      <h2>Internship <em>Experience</em></h2>
+    </div>
+
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-year">April 2026 – June 2026</div>
+        <h3>Artificial Intelligence Intern</h3>
+        <p><span class="score">SoftFlix, Mysuru · 3 Months Internship</span></p>
+        <p style="margin-top:10px;">
+          • Worked on Artificial Intelligence and Machine Learning concepts.<br>
+          • Developed the AI Admission Predictor project using Python and Machine Learning.<br>
+          • Built web applications using Streamlit and SQLite.<br>
+          • Used Python libraries including Pandas, NumPy, Scikit-learn, and XGBoost.<br>
+          • Performed data analysis, model training, testing, and project documentation.<br>
+          • Gained hands-on experience in real-world software development and problem-solving.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-eyebrow">05 · EDUCATION</div>
+      <h2>Academic <em>Journey</em></h2>
+    </div>
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-year">2024 — 2026 (Expected)</div>
+        <h3>Master of Computer Applications (MCA)</h3>
+        <p>Maharaja Institute of Technology, Mysuru · <span class="score">CGPA 8.75</span></p>
+      </div>
+      <div class="t-item">
+        <div class="t-year">2021 — 2024</div>
+        <h3>Bachelor of Computer Applications (BCA)</h3>
+        <p>JSS College of Arts, Commerce and Science, Mysuru · <span class="score">CGPA 8.87</span></p>
+      </div>
+      <div class="t-item">
+        <div class="t-year">2019 — 2021</div>
+        <h3>12th Standard — Science</h3>
+        <p>Vivekananda PU College, Mysuru · <span class="score">81.33%</span></p>
+      </div>
+      <div class="t-item">
+        <div class="t-year">2019</div>
+        <h3>10th Standard</h3>
+        <p>Sudarshan Vidya Samsthe, Mysuru · <span class="score">86.72%</span></p>
+      </div>
+    </div>
+
+    <div class="sec-head" style="margin-top:56px;margin-bottom:0;">
+  <div class="sec-eyebrow">CERTIFICATIONS</div>
+</div>
+
+<div class="cert-grid">
+
+  <div class="cert-card">
+    <div class="ct">Foundations of Cybersecurity</div>
+    <div class="cs">Google / Coursera · Jan 2026</div>
+  </div>
+
+  <div class="cert-card">
+    <div class="ct">AWS Cloud Technical Essentials</div>
+    <div class="cs">AWS / Coursera · Dec 2025</div>
+  </div>
+
+  <div class="cert-card">
+    <div class="ct">The Nuts and Bolts of Machine Learning</div>
+    <div class="cs">Google / Coursera · Dec 2025</div>
+  </div>
+
+  <div class="cert-card">
+    <div class="ct">UI/UX Design Fundamentals & Prototyping with Generative AI</div>
+    <div class="cs">SkillUp / Coursera · Jan 2026</div>
+  </div>
+
+  <div class="cert-card">
+  <div class="ct">Foundations: Data, Data, Everywhere</div>
+  <div class="cs">Google / Coursera · May 2026</div>
+</div>
+
+<div class="cert-card">
+  <div class="ct">Data Analytics Job Simulation</div>
+  <div class="cs">Deloitte / Forage · May 2026</div>
+</div>
+
+  <div class="cert-card">
+    <div class="ct">Python Course</div>
+    <div class="cs">Besant Technologies · Dec 2023</div>
+  </div>
+
+  <div class="cert-card">
+    <div class="ct">Soft Skill Development</div>
+    <div class="cs">NPTEL · March 2025</div>
+  </div>
+
+  <div class="cert-card">
+    <div class="ct">Artificial Intelligence Internship Certificate</div>
+    <div class="cs">SoftFlix, Mysuru · April 2026 – June 2026 (3 Months)</div>
+  </div>
+
+</div>
+</section>
+<section id="contact" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="contact-wrap">
+      <div>
+        <div class="sec-eyebrow">06 · CONTACT</div>
+        <h2>Let's <em>Connect</em></h2>
+        <p>Looking for Data Analyst, Business Analyst or Web/Full-Stack Developer roles. I bring hands-on project experience across both the data and development sides, and I'm quick to learn whatever a team needs next.</p>
+        <div class="role-tags">
+          <span class="role-tag">📊 Data Analyst</span>
+          <span class="role-tag">💻 Web Developer</span>
+          <span class="role-tag">🗄 Database Developer</span>
+          <span class="role-tag">📈 Reporting Analyst</span>
+        </div>
+      </div>
+      <div class="contact-links">
+        <a class="clink" href="mailto:llikitha702@gmail.com">
+          <div class="cl-i">✉️</div>
+          <div><div class="cl-l">Email</div><div class="cl-v">llikitha702@gmail.com</div></div>
+        </a>
+        <a class="clink" href="tel:+919380332175">
+          <div class="cl-i">📱</div>
+          <div><div class="cl-l">Phone</div><div class="cl-v">+91 93803 32175</div></div>
+        </a>
+        <a class="clink" href="https://www.linkedin.com/in/likitha-h-l-87a2b22a2" target="_blank">
+          <div class="cl-i">💼</div>
+          <div><div class="cl-l">LinkedIn</div><div class="cl-v">likitha-h-l-87a2b22a2</div></div>
+        </a>
+        <a class="clink" href="https://github.com/likitha8050" target="_blank">
+          <div class="cl-i">🐙</div>
+          <div><div class="cl-l">GitHub</div><div class="cl-v">likitha8050</div></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Designed for <span>Likitha H L</span> · © 2026 · Mysuru, Karnataka
+</footer>
+
+</body>
+</html>
